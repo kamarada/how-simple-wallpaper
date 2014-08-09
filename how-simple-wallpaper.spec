@@ -43,10 +43,12 @@ cp -a %{SOURCE0} COPYING
 
 
 %build
+
+###################
+# How Simple Blue #
+###################
+
 mkdir -p How_Simple_Blue/contents/images
-mkdir -p How_Simple_Darker_Blue/contents/images
-mkdir -p How_Simple_Green/contents/images
-mkdir -p How_Simple_Pink/contents/images
 
 cat >How_Simple_Blue/metadata.desktop <<EOF
 [Desktop Entry]
@@ -57,11 +59,47 @@ X-KDE-PluginInfo-Author=Mattias
 X-KDE-PluginInfo-License=CC-BY-NC-SA-3.0
 EOF
 
-mv "How simple/howsimple-2560x1600-blue.jpg" How_Simple_Blue/contents/images/2560x1600.jpeg
+# Source image dimensions - aspect ratio:
+# 2560x1600 - 1,6
 
-convert "How_Simple_Blue/contents/images/2560x1600.jpeg" \
+# Target images dimensions - aspect ratio:
+# 400x250 - 1,6
+convert "How simple/howsimple-2560x1600-blue.jpg" \
 -resize 400x250 \
 How_Simple_Blue/screenshot.jpeg
+
+# 1280x1024 - 1,25
+convert "How simple/howsimple-2560x1600-blue.jpg" \
+-crop 2000x1600+0+0 \
+-resize 1280x1024 \
+How_Simple_Blue/contents/images/1280x1024.jpeg
+
+# 1600x1200 - 1,333
+convert "How simple/howsimple-2560x1600-blue.jpg" \
+-crop 2132x1600+0+0 \
+-resize 1600x1200 \
+How_Simple_Blue/contents/images/1600x1200.jpeg
+
+# 1920x1080 - 1,777
+convert "How simple/howsimple-2560x1600-blue.jpg" \
+-crop 2560x1440+0+160 \
+-resize 1920x1080 \
+How_Simple_Blue/contents/images/1920x1080.jpeg
+
+# 1920x1200 - 1,6
+convert "How simple/howsimple-2560x1600-blue.jpg" \
+-resize 1920x1200 \
+How_Simple_Blue/contents/images/1920x1200.jpeg
+
+# 2560x1600 - 1,6
+cp "How simple/howsimple-2560x1600-blue.jpg" How_Simple_Blue/contents/images/2560x1600.jpeg
+
+
+##########################
+# How Simple Darker Blue #
+##########################
+
+mkdir -p How_Simple_Darker_Blue/contents/images
 
 cat >How_Simple_Darker_Blue/metadata.desktop <<EOF
 [Desktop Entry]
@@ -72,11 +110,48 @@ X-KDE-PluginInfo-Author=Mattias
 X-KDE-PluginInfo-License=CC-BY-NC-SA-3.0
 EOF
 
-convert "How simple/howsimple-2560x1600-darkerblue.png" How_Simple_Darker_Blue/contents/images/2560x1600.jpeg
+# Source image dimensions - aspect ratio:
+# 2560x1600 - 1,6
 
+# Target images dimensions - aspect ratio:
+# 400x250 - 1,6
 convert "How simple/howsimple-2560x1600-darkerblue.png" \
 -resize 400x250 \
 How_Simple_Darker_Blue/screenshot.jpeg
+
+# 1280x1024 - 1,25
+convert "How simple/howsimple-2560x1600-darkerblue.png" \
+-crop 2000x1600+0+0 \
+-resize 1280x1024 \
+How_Simple_Darker_Blue/contents/images/1280x1024.jpeg
+
+# 1600x1200 - 1,333
+convert "How simple/howsimple-2560x1600-darkerblue.png" \
+-crop 2132x1600+0+0 \
+-resize 1600x1200 \
+How_Simple_Darker_Blue/contents/images/1600x1200.jpeg
+
+# 1920x1080 - 1,777
+convert "How simple/howsimple-2560x1600-darkerblue.png" \
+-crop 2560x1440+0+160 \
+-resize 1920x1080 \
+How_Simple_Darker_Blue/contents/images/1920x1080.jpeg
+
+# 1920x1200 - 1,6
+convert "How simple/howsimple-2560x1600-darkerblue.png" \
+-resize 1920x1200 \
+How_Simple_Darker_Blue/contents/images/1920x1200.jpeg
+
+# 2560x1600 - 1,6
+convert "How simple/howsimple-2560x1600-darkerblue.png" \
+How_Simple_Darker_Blue/contents/images/2560x1600.jpeg
+
+
+####################
+# How Simple Green #
+####################
+
+mkdir -p How_Simple_Green/contents/images
 
 cat >How_Simple_Green/metadata.desktop <<EOF
 [Desktop Entry]
@@ -87,11 +162,47 @@ X-KDE-PluginInfo-Author=Mattias
 X-KDE-PluginInfo-License=CC-BY-NC-SA-3.0
 EOF
 
-mv "How simple/howsimple-2560x1600-green.jpg" How_Simple_Green/contents/images/2560x1600.jpeg
+# Source image dimensions - aspect ratio:
+# 2560x1600 - 1,6
 
-convert "How_Simple_Green/contents/images/2560x1600.jpeg" \
+# Target images dimensions - aspect ratio:
+# 400x250 - 1,6
+convert "How simple/howsimple-2560x1600-green.jpg" \
 -resize 400x250 \
 How_Simple_Green/screenshot.jpeg
+
+# 1280x1024 - 1,25
+convert "How simple/howsimple-2560x1600-green.jpg" \
+-crop 2000x1600+0+0 \
+-resize 1280x1024 \
+How_Simple_Green/contents/images/1280x1024.jpeg
+
+# 1600x1200 - 1,333
+convert "How simple/howsimple-2560x1600-green.jpg" \
+-crop 2132x1600+0+0 \
+-resize 1600x1200 \
+How_Simple_Green/contents/images/1600x1200.jpeg
+
+# 1920x1080 - 1,777
+convert "How simple/howsimple-2560x1600-green.jpg" \
+-crop 2560x1440+0+160 \
+-resize 1920x1080 \
+How_Simple_Green/contents/images/1920x1080.jpeg
+
+# 1920x1200 - 1,6
+convert "How simple/howsimple-2560x1600-green.jpg" \
+-resize 1920x1200 \
+How_Simple_Green/contents/images/1920x1200.jpeg
+
+# 2560x1600 - 1,6
+cp "How simple/howsimple-2560x1600-green.jpg" How_Simple_Green/contents/images/2560x1600.jpeg
+
+
+###################
+# How Simple Pink #
+###################
+
+mkdir -p How_Simple_Pink/contents/images
 
 cat >How_Simple_Pink/metadata.desktop <<EOF
 [Desktop Entry]
@@ -102,11 +213,40 @@ X-KDE-PluginInfo-Author=Mattias
 X-KDE-PluginInfo-License=CC-BY-NC-SA-3.0
 EOF
 
-mv "How simple/howsimple-2560x1600-pink.jpg" How_Simple_Pink/contents/images/2560x1600.jpeg
+# Source image dimensions - aspect ratio:
+# 2560x1600 - 1,6
 
-convert "How_Simple_Pink/contents/images/2560x1600.jpeg" \
+# Target images dimensions - aspect ratio:
+# 400x250 - 1,6
+convert "How simple/howsimple-2560x1600-pink.jpg" \
 -resize 400x250 \
 How_Simple_Pink/screenshot.jpeg
+
+# 1280x1024 - 1,25
+convert "How simple/howsimple-2560x1600-pink.jpg" \
+-crop 2000x1600+0+0 \
+-resize 1280x1024 \
+How_Simple_Pink/contents/images/1280x1024.jpeg
+
+# 1600x1200 - 1,333
+convert "How simple/howsimple-2560x1600-pink.jpg" \
+-crop 2132x1600+0+0 \
+-resize 1600x1200 \
+How_Simple_Pink/contents/images/1600x1200.jpeg
+
+# 1920x1080 - 1,777
+convert "How simple/howsimple-2560x1600-pink.jpg" \
+-crop 2560x1440+0+160 \
+-resize 1920x1080 \
+How_Simple_Pink/contents/images/1920x1080.jpeg
+
+# 1920x1200 - 1,6
+convert "How simple/howsimple-2560x1600-pink.jpg" \
+-resize 1920x1200 \
+How_Simple_Pink/contents/images/1920x1200.jpeg
+
+# 2560x1600 - 1,6
+cp "How simple/howsimple-2560x1600-pink.jpg" How_Simple_Pink/contents/images/2560x1600.jpeg
 
 
 %install
@@ -117,7 +257,7 @@ cp -R $RPM_BUILD_DIR/How_Simple_* $RPM_BUILD_ROOT/usr/share/wallpapers/
 %files
 %defattr(-,root,root)
 %doc COPYING
-/usr/share/wallpapers/
+%dir /usr/share/wallpapers/
 /usr/share/wallpapers/How_Simple_Blue/
 /usr/share/wallpapers/How_Simple_Darker_Blue/
 /usr/share/wallpapers/How_Simple_Green/
